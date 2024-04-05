@@ -5,8 +5,12 @@ const MAX_RANGE = 10;
 
 const isEven = (int) => int % 2 === 0;
 
-const question = () => getRandomInt(MAX_RANGE);
+const task = () => {
+  const num = getRandomInt(MAX_RANGE);
+  const question = `${num}`;
+  const answer = isEven(num) ? 'yes' : 'no';
 
-const answer = (num) => (isEven(num) ? 'yes' : 'no');
+  return [question, answer];
+};
 
-export default () => game(RULES, question, answer);
+export default () => game(RULES, task);

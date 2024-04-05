@@ -3,17 +3,10 @@ import game, { getRandomInt } from '../index.js';
 const RULES = 'Find the greatest common divisor of given numbers.';
 const MAX_RANGE = 100;
 
-const question = () => {
-  const a = getRandomInt(MAX_RANGE);
-  const b = getRandomInt(MAX_RANGE);
-
-  return `${a} ${b}`;
-};
-
-const answer = (str) => {
-  let [a, b] = str.split(' ');
-  a = parseInt(a, 10);
-  b = parseInt(b, 10);
+const task = () => {
+  let a = getRandomInt(MAX_RANGE);
+  let b = getRandomInt(MAX_RANGE);
+  const question = `${a} ${b}`;
 
   while (a !== 0 && b !== 0) {
     if (a > b) {
@@ -22,9 +15,9 @@ const answer = (str) => {
       b %= a;
     }
   }
+  const answer = `${a + b}`;
 
-  const result = a + b;
-  return `${result}`;
+  return [question, answer];
 };
 
-export default () => game(RULES, question, answer);
+export default () => game(RULES, task);
