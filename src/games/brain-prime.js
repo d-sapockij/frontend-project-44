@@ -12,7 +12,6 @@ const isPrime = (num) => {
 
 const task = () => {
   const num = getRandomInt(MAX_RANGE);
-
   const question = `${num}`;
   const answer = isPrime(num) ? 'yes' : 'no';
 
