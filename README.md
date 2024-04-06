@@ -24,11 +24,7 @@ To start game run one of comands:
 Please, check out links below to see the installation process and game logic.
 
 - [Install and demo brain-even](https://asciinema.org/a/oKPDdxDv4HyFS8olb7ciNUeIa)
-
 - [Demo brain-calc](https://asciinema.org/a/aymwVnhwUP7jvROgcITog7hFJ)
-
 - [Demo brain-gcd](https://asciinema.org/a/c3vniqeqfjGq18yvykJWAgra8)
-
 - [Demo brain-progression](https://asciinema.org/a/lzcg2LskjslGRsrb3DPaOX5QE)
-
 - [Demo brain-prime](https://asciinema.org/a/ho0Uxkz47gs3DOnPSQ8OYd8Xa)
