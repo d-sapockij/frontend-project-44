@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a0846373f3f9bddfa1ec/maintainability)](https://codeclimate.com/github/d-sapockij/frontend-project-44/maintainability)
 
-###Brain Games 
+### Brain Games 
 is the first project developed as part of training at the Hexlet school. It is a set of 5 games running in the console. 
 Each game consists of 3 rounds, to win you must successfully complete each of them. If you answer incorrectly, the game will end.
 
