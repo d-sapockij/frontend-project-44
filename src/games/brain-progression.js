@@ -6,27 +6,33 @@ const MIN_PROGRESSION_LENGTH = 5;
 const MAX_PROGRESSION_LENGTH = 15;
 const MAX_PROGRESSION_STEP = 5;
 
-const task = () => {
+const getProgression = () => {
   const progressionLength = getRandomIntInterval(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
   const progressionStep = getRandomIntInterval(1, MAX_PROGRESSION_STEP);
   const hiddenItemIndex = getRandomInt(progressionLength);
 
   let item = getRandomInt(MAX_RANGE);
   const progression = [];
-  let result = 0;
+  let hiddenItem = 0;
 
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenItemIndex) {
       progression.push('..');
-      result = item;
+      hiddenItem = item;
     } else {
       progression.push(item);
     }
     item += progressionStep;
   }
 
+  return [progression, hiddenItem];
+};
+
+const task = () => {
+  const [progression, hiddenItem] = getProgression();
+
   const question = progression.join(' ');
-  const answer = `${result}`;
+  const answer = `${hiddenItem}`;
 
   return [question, answer];
 };
