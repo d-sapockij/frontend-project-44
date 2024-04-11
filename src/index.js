@@ -1,29 +1,13 @@
 import readlineSync from 'readline-sync';
+import greet from './greet.js';
 
 const ATTEMT_COUNT = 3;
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
-
-function getRandomIntInterval(start, end) {
-  const min = Math.ceil(start);
-  const max = Math.floor(end);
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-const getUserName = () => readlineSync.question('May I have your name? ');
 const getUserAnswer = () => readlineSync.question('Your answer: ');
-
-const greet = (rules) => {
-  console.log('Welcome to the Brain Games!');
-  const name = getUserName();
-  console.log(`Hello, ${name}`);
-  console.log(rules);
-
-  return name;
-};
 
 const game = (rules, task) => {
   const name = greet(rules);
+  let mistake = false;
 
   for (let i = 0; i < ATTEMT_COUNT; i += 1) {
     const [question, expectedAnswer] = task();
@@ -32,17 +16,18 @@ const game = (rules, task) => {
 
     if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+      mistake = true;
       break;
     }
 
     console.log('Correct!');
+  }
 
-    if (i === ATTEMT_COUNT - 1) {
-      console.log(`Congratulations, ${name}!`);
-    }
+  if (mistake) {
+    console.log(`Let's try again, ${name}!`);
+  } else {
+    console.log(`Congratulations, ${name}!`);
   }
 };
 
-export { getRandomInt, getRandomIntInterval };
 export default game;

@@ -1,4 +1,5 @@
-import game, { getRandomInt } from '../index.js';
+import game from '../index.js';
+import { getRandomInt } from '../random.js';
 
 const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MAX_RANGE = 10;

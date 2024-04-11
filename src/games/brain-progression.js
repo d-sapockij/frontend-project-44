@@ -1,4 +1,5 @@
-import game, { getRandomInt, getRandomIntInterval } from '../index.js';
+import game from '../index.js';
+import { getRandomInt, getRandomIntInterval } from '../random.js';
 
 const RULES = 'What number is missing in the progression?';
 const MAX_RANGE = 100;
