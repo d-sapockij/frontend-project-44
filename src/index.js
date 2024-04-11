@@ -7,7 +7,6 @@ const getUserAnswer = () => readlineSync.question('Your answer: ');
 
 const game = (rules, task) => {
   const name = greet(rules);
-  let mistake = false;
 
   for (let i = 0; i < ATTEMT_COUNT; i += 1) {
     const [question, expectedAnswer] = task();
@@ -16,18 +15,14 @@ const game = (rules, task) => {
 
     if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
-      mistake = true;
-      break;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
 
     console.log('Correct!');
   }
 
-  if (mistake) {
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default game;
