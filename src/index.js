@@ -6,7 +6,8 @@ const ATTEMT_COUNT = 3;
 const getUserAnswer = () => readlineSync.question('Your answer: ');
 
 const game = (rules, task) => {
-  const name = greet(rules);
+  const name = greet();
+  console.log(rules);
 
   for (let i = 0; i < ATTEMT_COUNT; i += 1) {
     const [question, expectedAnswer] = task();
